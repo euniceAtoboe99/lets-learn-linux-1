@@ -1,4 +1,10 @@
-# Section 1 – Orient Yourself
+## Q4
+
+I used the `-p` flag with the mkdir command. This allowed the parent directories to be created automatically and prevented errors if a directory already existed.
+
+I also used Bash brace expansion to create the entire folder structure in a single command. This saved time and made the command much cleaner than creating each directory one by one.
+
+I could have created the directories individually, but it would have taken longer and increased the chance of making mistakes. Using brace expansion was the faster and more efficient approach.# Section 1 – Orient Yourself
 
 ## Q1
 
