@@ -77,7 +77,7 @@ Contains shell configuration settings, aliases, environment variables, and start
 Contains commands and environment settings that are executed when a user logs in.
 
 
-Q4
+## Q4
 
 To create the directory structure, I used the -p flag with the mkdir command. The -p flag allows parent directories to be created automatically if they do not already exist. It also prevents errors if a directory already exists.
 
