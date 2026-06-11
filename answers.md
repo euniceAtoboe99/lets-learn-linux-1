@@ -84,3 +84,22 @@ To create the directory structure, I used the -p flag with the mkdir command. Th
 I also used brace expansion in Bash. Brace expansion allows multiple directory names to be generated from a single command, which made it possible to create the entire folder structure in one step instead of creating each folder individually.
 
 Without brace expansion, I would have needed several separate mkdir commands to create each directory one at a time. While that would still work, it would be slower and more likely to result in mistakes. Using brace expansion made the command shorter, easier to read, and more efficient, especially when creating a large directory structure.
+Q5
+
+I used the touch command to create the required files. Besides creating empty files, touch can also update the timestamp of an existing file.
+
+If the file already exists, the contents stay the same, but the access and modification times are updated. This is useful in automation because scripts can safely create required files without overwriting existing data.
+
+Q6
+
+The files currently show a size of 0 bytes because they are empty placeholder files. The permission string shows who can read, write, or execute the file.
+
+For example, -rw-r--r-- means the owner can read and write the file, while the group and other users can only read it.
+
+The -h option makes file sizes easier to read by displaying them in a human-readable format.
+
+Q7
+
+The tree command displays files and folders in a clear hierarchy, making it easier to understand the structure of a project. On the other hand, ls -R lists files recursively but can be harder to follow when there are many directories.
+
+A DevSecOps engineer might use tree to quickly verify that a deployment or automation script created the correct folder structure.
