@@ -71,3 +71,10 @@ Contains shell configuration settings, aliases, environment variables, and start
 Contains commands and environment settings that are executed when a user logs in.
 
 
+Q4
+
+To create the directory structure, I used the -p flag with the mkdir command. The -p flag allows parent directories to be created automatically if they do not already exist. It also prevents errors if a directory already exists.
+
+I also used brace expansion in Bash. Brace expansion allows multiple directory names to be generated from a single command, which made it possible to create the entire folder structure in one step instead of creating each folder individually.
+
+Without brace expansion, I would have needed several separate mkdir commands to create each directory one at a time. While that would still work, it would be slower and more likely to result in mistakes. Using brace expansion made the command shorter, easier to read, and more efficient, especially when creating a large directory structure.
