@@ -188,3 +188,33 @@ Can link to a directory?                    No                Yes
 Shows as l in ls -la?                       No                Yes
 
 Detectable by matching inodes in ls -li?    Yes               No
+
+## Q19
+
+The directory listing for the existing path was written to stdout_output.txt, while the error message for the missing path was written to stderr_output.txt.
+
+Linux uses three standard streams:
+
+* stdin (0) for input
+* stdout (1) for normal output
+* stderr (2) for error messages
+
+The 2> operator specifically redirects error output to a file.
+
+The command 2>&1 sends error output to the same destination as standard output. This is useful when you want both normal messages and errors recorded in a single log file.
+
+## Q20
+
+I used an unquoted delimiter because I wanted variable expansion to be available if needed.
+
+When the delimiter is quoted, variables are treated as plain text. When it is unquoted, variables are expanded before being written to the file.
+
+A quoted heredoc is useful when you want to preserve text exactly as written. An unquoted heredoc is useful when generating reports or configuration files that include variables.
+
+## Q21
+
+This lab helped me understand how different Linux commands work together to manage files, logs, links, and reports in a structured environment.
+
+One command that changed how I think about Linux is ln, because it showed me the difference between hard links and symbolic links at the filesystem level.
+
+Another command was tree, which made it much easier to visualise and verify directory structures. I can see how it would be useful when reviewing deployments, troubleshooting issues, or checking whether automation scripts created the expected files and folders.
