@@ -175,19 +175,19 @@ Broken symlinks can cause issues in deployment environments because applications
 
 ## Q18
 
-## Property                                Hard Link          Soft Link
+## Property                               ##  Hard Link          ## Soft Link
 
-Shares inode with original?                 Yes               No
+Shares inode with original?                  Yes                 No
 
-Works across different filesystems          No                Yes
+Works across different filesystems           No                  Yes
+ 
+Survives deletion of original?               Yes                 No
 
-Survives deletion of original?              Yes               No
+Can link to a directory?                     No                  Yes
 
-Can link to a directory?                    No                Yes
+Shows as l in ls -la?                        No                 Yes
 
-Shows as l in ls -la?                       No                Yes
-
-Detectable by matching inodes in ls -li?    Yes               No
+Detectable by matching inodes in ls -li?     Yes                No
 
 ## Q19
 
