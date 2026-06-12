@@ -85,7 +85,6 @@ I used the touch command to create the required files. Besides creating empty fi
 If the file already exists, the contents stay the same, but the access and modification times are updated. This is useful in automation because scripts can safely create required files without overwriting existing data.
 
 ## Q6
-
 The files currently show a size of 0 bytes because they are empty placeholder files. The permission string shows who can read, write, or execute the file.
 
 For example, -rw-r--r-- means the owner can read and write the file, while the group and other users can only read it.
@@ -97,3 +96,35 @@ The -h option makes file sizes easier to read by displaying them in a human-read
 The tree command displays files and folders in a clear hierarchy, making it easier to understand the structure of a project. On the other hand, ls -R lists files recursively but can be harder to follow when there are many directories.
 
 A DevSecOps engineer might use a tree to quickly verify that a deployment or automation script created the correct folder structure.
+A DevSecOps engineer might use tree to quickly verify that a deployment or automation script created the correct folder structure.
+Section 3 – Write and Read Files
+
+Q8
+
+The > operator replaces everything in a file, while >> adds new content to the end of the file without removing what is already there.
+
+When I tested >, the previous log entries were overwritten and only the new entry remained. Using >> allowed me to keep the existing logs and add new entries below them.
+
+In a production environment, using > by mistake could delete important logs and make troubleshooting much harder.
+
+Q9
+
+The cat command displays a file from top to bottom, while tac displays it in reverse order.
+
+When investigating a large log file, I would usually check the most recent entries first because they are more likely to explain the current issue.
+
+Another useful command is tail, which can be used to display only the last few lines of a file. For example, tail -10 filename shows the last 10 lines.
+
+Q10
+
+A heredoc makes it possible to write multiple lines into a file in a single operation. It is cleaner and easier to manage than using several separate echo commands.
+
+The difference between 'EOF' and EOF is that quoted delimiters prevent variable expansion, while unquoted delimiters allow variables to be expanded before being written to the file.
+
+Using a heredoc is often faster and more practical when creating configuration files, scripts, or sample log data.
+
+Q11
+
+Both less and more are used to read files one page at a time. However, less provides more navigation features and is generally easier to use with large files.
+
+If I was working with a large log file, I would choose less because it allows me to search through the file and move around more efficiently.
