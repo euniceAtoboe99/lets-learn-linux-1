@@ -128,3 +128,27 @@ Using a heredoc is often faster and more practical when creating configuration f
 Both less and more are used to read files one page at a time. However, less provides more navigation features and is generally easier to use with large files.
 
 If I were working with a large log file, I would choose less because it allows me to search through the file and move around more efficiently.
+If I was working with a large log file, I would choose less because it allows me to search through the file and move around more efficiently.
+Q12
+
+I used cp to create a copy of the error log while keeping the original file unchanged. I then used mv to rename the access log with the required date in the filename.
+
+After renaming the file with mv, the old filename no longer existed because it had been replaced by the new one. In contrast, using cp left both the original file and the copied version available.
+
+When copying a large file, the system needs to create another copy of the data on disk, which can take time and use additional storage space.
+
+
+## Q13
+
+The empty directory was removed successfully using rmdir. However, when I tried to remove the logs directory, the command failed because it was not empty.
+
+The main difference is that rmdir only removes empty directories, while rm -r can remove directories together with everything inside them.
+
+The rm -rf command is powerful but risky because it permanently deletes files and folders without asking for confirmation. Before using it, I would always double-check the path to avoid deleting important data by mistake.
+
+
+## Q14
+
+The final directory structure still matches the original layout that was created earlier in the lab. The only changes were the renamed and archived log files, which were part of the task requirements.
+
+Having a clean and predictable directory structure makes it easier for automation scripts, monitoring tools, and log collectors to find the files they need. It also helps when troubleshooting because everything is stored in expected locations.
