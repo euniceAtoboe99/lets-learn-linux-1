@@ -16,8 +16,6 @@ The `uname -a` command displays detailed system information including the kernel
 
 A DevSecOps engineer runs these commands immediately after connecting to a server to understand their environment. Knowing the current directory prevents mistakes when working with files. Knowing the logged-in user helps determine available permissions. The operating system and kernel version are important for identifying compatibility issues and known vulnerabilities (CVEs) that may affect the system.
 
----
-
 ## Q2
 
 ### Five directories and their purpose
@@ -48,8 +46,6 @@ FHS provides consistency across Linux distributions, making administration, auto
 ### What breaks without it?
 
 Without FHS, administrators and automation tools would not know where to find configuration files, logs, applications, and libraries. This would make system management and collaboration much more difficult.
-
----
 
 ## Q3
 
@@ -152,3 +148,43 @@ The rm -rf command is powerful but risky because it permanently deletes files an
 The final directory structure still matches the original layout that was created earlier in the lab. The only changes were the renamed and archived log files, which were part of the task requirements.
 
 Having a clean and predictable directory structure makes it easier for automation scripts, monitoring tools, and log collectors to find the files they need. It also helps when troubleshooting because everything is stored in expected locations.
+
+## Q15
+
+After creating the hard link, I noticed that both files had the same inode number. This showed that they were pointing to the same file on disk rather than creating a separate copy.
+
+The link count increased because there were now two filenames referring to the same inode.
+
+In simple terms, an inode is where Linux stores information about a file, such as its location, permissions, ownership, and other metadata.
+
+## Q16
+
+Even after deleting the original db.conf file, I was still able to access the contents through the hard link. This happened because the data remains available as long as at least one link still points to the inode.
+
+When I checked the inode information again, the link count had decreased, but the file itself was still available.
+
+This shows that deleting a filename does not always remove the actual data immediately if another hard link still exists.
+
+## Q17
+
+The l at the beginning of the permissions string identified the file as a symbolic link.
+
+After deleting the original app.conf file, the symbolic link no longer worked because its target file no longer existed. This created what is known as a broken or dangling symlink.
+
+Broken symlinks can cause issues in deployment environments because applications may still expect the original file to be present.
+
+## Q18
+
+## Property                                Hard Link          Soft Link
+
+Shares inode with original?                 Yes               No
+
+Works across different filesystems          No                Yes
+
+Survives deletion of original?              Yes               No
+
+Can link to a directory?                    No                Yes
+
+Shows as l in ls -la?                       No                Yes
+
+Detectable by matching inodes in ls -li?    Yes               No
