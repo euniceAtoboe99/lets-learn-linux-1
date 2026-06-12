@@ -175,7 +175,7 @@ Broken symlinks can cause issues in deployment environments because applications
 
 ## Q18
 
-## Property                               ##  Hard Link          ## Soft Link
+Property                                  Hard Link          Soft Link
 
 Shares inode with original?                  Yes                 No
 
